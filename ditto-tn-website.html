@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f8f4">
+<title>Ditto Tamil Nadu | Insurance, in your language</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #F5F8F4;
+    --surface: #FFFFFF;
+    --ink: #18312D;
+    --muted: #61736E;
+    --line: #DCE6E0;
+    --teal: #087F78;
+    --teal-dark: #075B55;
+    --gold: #E7A640;
+    --gold-dark: #C78321;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    scroll-padding-top: 96px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  h1, h2, h3, .brand { font-family: 'Fraunces', Georgia, serif; }
+  h1, h2, h3, p { margin-top: 0; }
+    html[lang="ta"] h1, html[lang="ta"] h2, html[lang="ta"] h3 { overflow-wrap: anywhere; }
+  .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+  .skip-link { position: absolute; left: -999px; top: 8px; z-index: 30; background: white; padding: 10px; }
+  .skip-link:focus { left: 8px; }
+  nav { position: sticky; top: 0; z-index: 20; background: rgb(245 248 244 / 94%); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  .navrow { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+  .brand { text-decoration: none; font-size: 21px; font-weight: 700; white-space: nowrap; }
+  .brand span { color: var(--teal); }
+  .navlinks { display: flex; align-items: center; gap: 22px; font-size: 13px; font-weight: 600; }
+  .navlinks a { text-decoration: none; white-space: nowrap; }
+  .navlinks a:hover, .text-link:hover { color: var(--teal); }
+  .nav-actions { display: flex; align-items: center; gap: 10px; }
+  .lang-toggle { display: flex; gap: 2px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); padding: 3px; }
+  .lang-toggle button { border: 0; background: transparent; border-radius: 5px; padding: 6px 8px; color: var(--muted); font: 600 12px 'DM Sans', sans-serif; cursor: pointer; }
+  .lang-toggle button[aria-pressed="true"] { background: var(--teal); color: white; }
+  .button { display: inline-flex; justify-content: center; align-items: center; min-height: 44px; padding: 10px 17px; border: 1px solid transparent; border-radius: 7px; background: var(--gold); color: #211800; text-decoration: none; font: 700 13px 'DM Sans', sans-serif; cursor: pointer; }
+  .button { transition: background-color .18s ease, border-color .18s ease, color .18s ease, transform .18s ease; }
+  .button:hover { background: var(--gold-dark); transform: translateY(-1px); }
+  .button.secondary { background: transparent; border-color: var(--line); color: var(--ink); }
+  .button.secondary:hover { border-color: var(--teal); color: var(--teal); }
+  .hero { min-height: 510px; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 48px; padding-block: 58px; }
+  .hero { position: relative; isolation: isolate; min-height: 590px; display: flex; align-items: center; overflow: hidden; padding-block: 68px 92px; background-color: #355344; background-image: url('https://images.unsplash.com/photo-1631546099508-f0fddd188361?auto=format&fit=crop&w=2400&q=85'); background-size: cover; background-position: center 55%; color: white; }
+  .hero::before { content: ''; position: absolute; inset: 0; z-index: -1; background: rgb(20 43 33 / 48%); }
+  .hero-content { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+  .eyebrow { display: inline-block; margin-bottom: 15px; color: var(--teal); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+  .hero .eyebrow { color: #E5F3E8; }
+  .hero h1 { max-width: 700px; margin-bottom: 18px; font-size: 62px; line-height: 1.06; }
+  .hero-copy { max-width: 520px; margin-bottom: 24px; color: #F0F5F0; font-size: 16px; line-height: 1.7; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  .hero .button.secondary { border-color: rgb(255 255 255 / 60%); color: white; }
+  .hero .button.secondary:hover { border-color: white; background: rgb(255 255 255 / 12%); color: white; }
+  .hero-photo-credit { position: absolute; right: max(20px, calc((100% - 1120px) / 2)); bottom: 20px; color: #F0F5F0; font-size: 11px; text-align: right; }
+  .hero-photo-credit a { text-underline-offset: 3px; }
+  section { padding-block: 58px; }
+  .section-heading { max-width: 640px; margin-bottom: 28px; }
+  .section-heading h2, .contact-intro h2 { margin-bottom: 9px; font-size: clamp(28px, 3.6vw, 38px); line-height: 1.15; }
+  .section-heading p, .contact-intro p { margin-bottom: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+  .guides { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .guide { min-width: 0; padding: 20px; border: 1px solid var(--line); border-radius: 9px; background: var(--surface); }
+    .guide { transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
+    .guide:hover { border-color: #A9C6B8; box-shadow: 0 8px 22px rgb(24 49 45 / 7%); transform: translateY(-2px); }
+  .guide summary { cursor: pointer; list-style: none; }
+  .guide summary::-webkit-details-marker { display: none; }
+  .guide summary::after { content: '＋  Read guide'; display: block; margin-top: 15px; color: var(--teal); font-size: 12px; font-weight: 700; }
+  .guide[open] summary::after { content: '−  Close guide'; }
+    html[lang="ta"] .guide summary::after { content: '＋  வழிகாட்டியைப் படிக்கவும்'; }
+    html[lang="ta"] .guide[open] summary::after { content: '−  வழிகாட்டியை மூடவும்'; }
+  .guide-tag { color: var(--teal); font-size: 10px; font-weight: 700; text-transform: uppercase; }
+  .guide h3 { margin: 9px 0 8px; font-size: 20px; }
+  .guide summary p, .guide-copy { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+  .guide-copy { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+  .process { border-radius: 10px; padding: 34px; background: var(--teal-dark); color: white; }
+  .process .section-heading p { color: #D5EBE4; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .step-number { display: block; margin-bottom: 8px; color: #9ED8B9; font: 600 27px 'Fraunces', Georgia, serif; }
+  .step h3 { margin-bottom: 6px; font-size: 18px; }
+  .step p { margin: 0; color: #D5EBE4; font-size: 13px; line-height: 1.6; }
+  .culture { display: grid; grid-template-columns: .85fr 1.15fr; gap: 38px; align-items: start; padding-block: 38px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .culture h2 { margin-bottom: 11px; font-size: 32px; line-height: 1.2; }
+  .culture-copy { color: var(--muted); font-size: 14px; line-height: 1.75; }
+  .traditions { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .tradition { padding: 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+  .tradition strong { display: block; margin-bottom: 5px; font-family: 'Fraunces', Georgia, serif; font-size: 17px; }
+  .tradition span { color: var(--muted); font-size: 12px; line-height: 1.55; }
+  .locations { display: flex; flex-wrap: wrap; gap: 9px; }
+  .location { padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); font-size: 13px; font-weight: 600; }
+  .careers { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 27px 0; border-top: 1px solid var(--line); }
+  .careers h2 { margin-bottom: 5px; font-size: 25px; }
+  .careers p { margin: 0; color: var(--muted); font-size: 13px; }
+  .contact { display: grid; grid-template-columns: .8fr 1.2fr; gap: 44px; align-items: start; border-top: 1px solid var(--line); }
+  .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .contact-form label { display: grid; gap: 6px; font-size: 12px; font-weight: 700; }
+  .contact-form .full, .contact-form button, .form-note { grid-column: 1 / -1; }
+  .contact-form input, .contact-form select, .contact-form textarea { width: 100%; min-height: 42px; padding: 10px 11px; border: 1px solid var(--line); border-radius: 6px; background: white; color: var(--ink); font: 14px 'DM Sans', sans-serif; }
+  .contact-form textarea { min-height: 84px; resize: vertical; }
+  .form-note { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+  footer { border-top: 1px solid var(--line); padding-block: 22px; color: var(--muted); font-size: 12px; }
+  .footer-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px; }
+  :focus-visible { outline: 3px solid #E7A640; outline-offset: 3px; }
+  @media (max-width: 900px) {
+    .navrow { flex-wrap: wrap; justify-content: space-between; gap: 8px 14px; padding-block: 10px; }
+    .navlinks { order: 3; width: 100%; min-width: 0; gap: 20px; overflow-x: auto; padding-block: 3px 5px; }
+    .hero { background-position: 58% center; }
+    .hero h1 { font-size: 54px; }
+  }
+  @media (max-width: 680px) {
+    .wrap { width: min(100% - 32px, 540px); }
+    .navlinks { gap: 18px; font-size: 12px; }
+    .nav-actions { gap: 6px; }
+    .nav-actions .button { padding-inline: 11px; font-size: 11px; }
+    .hero { min-height: 560px; padding-block: 58px 92px; background-position: 62% center; }
+    .hero-content { width: min(100% - 32px, 540px); }
+    .hero h1 { font-size: 42px; }
+    .hero-photo-credit { right: 16px; bottom: 14px; max-width: calc(100% - 32px); }
+    section { padding-block: 42px; }
+    .guides, .steps { grid-template-columns: 1fr; }
+    .process { padding: 24px 20px; }
+    .culture, .contact { grid-template-columns: 1fr; gap: 20px; }
+    .careers { align-items: flex-start; flex-direction: column; }
+  }
+  @media (max-width: 420px) {
+    .traditions, .contact-form { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 36px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+<nav aria-label="Main navigation" data-i18n-aria="mainNav">
+  <div class="wrap navrow">
+    <a class="brand" href="#top" aria-label="Ditto Tamil Nadu home" data-i18n-aria="brandHome">Ditto<span>·</span>TN</a>
+    <div class="navlinks">
+      <a href="#learn" data-i18n="navLearn">Learn</a>
+      <a href="#how-it-works" data-i18n="navProcess">How it works</a>
+      <a href="#culture" data-i18n="navCulture">Our culture</a>
+      <a href="#places" data-i18n="navPlaces">Tamil Nadu</a>
+      <a href="#careers" data-i18n="navCareers">Careers</a>
+    </div>
+    <div class="nav-actions">
+      <div class="lang-toggle" aria-label="Choose language" data-i18n-aria="chooseLanguage">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="ta" aria-pressed="false">தமிழ்</button>
+      </div>
+      <a class="button" href="#contact" id="navCta" data-i18n="callCta">Request a call</a>
+    </div>
+  </div>
+</nav>
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="heroTitle">
+      <div class="wrap hero-content">
+        <span class="eyebrow" data-i18n="heroEyebrow">Tamil Nadu · தமிழ் · English</span>
+        <h1 id="heroTitle" data-i18n="heroTitle">Insurance advice that's actually for you.</h1>
+        <p class="hero-copy" id="heroLede" data-i18n="heroLede">Talk through your insurance questions in plain Tamil or English. Take the time you need to understand your options before making a decision.</p>
+        <div class="hero-actions">
+          <a class="button" href="#contact" id="heroCta" data-i18n="callCta">Request a call</a>
+          <a class="button secondary" href="#learn" data-i18n="exploreGuides">Explore free guides</a>
+        </div>
+      </div>
+    <p class="hero-photo-credit"><span data-i18n="photoCaption">Landscape near Bokkapuram, Tamil Nadu · photo by </span><a href="https://unsplash.com/photos/a-lush-green-field-surrounded-by-mountains-under-a-cloudy-sky-sRNxd84N6lo" target="_blank" rel="noreferrer" data-i18n="photoCredit">Ronak Naik / Unsplash</a></p>
+    </section>
+  
+
+  <section id="learn">
+    <div class="wrap">
+        <div class="section-heading"><span class="eyebrow" data-i18n="learnEyebrow">A GOOD PLACE TO START</span><h2 data-i18n="learnTitle">Insurance, in everyday language.</h2><p data-i18n="learnCopy">Open a guide to explore the basics. General information only; policy terms and benefits vary.</p></div>
+      <div class="guides">
+        <details class="guide"><summary><span class="guide-tag" data-i18n="guideTag1">Life and health</span><h3 data-i18n="guideTitle1">Term vs. health insurance</h3><p data-i18n="guideSummary1">What each type is designed to cover.</p></summary><div class="guide-copy" data-i18n="guideCopy1"><b>Term cover</b> may provide a benefit to your chosen beneficiaries if you die during the policy term. <b>Health cover</b> helps with eligible medical expenses, subject to policy limits, terms and exclusions. They address different needs.</div></details>
+        <details class="guide"><summary><span class="guide-tag" data-i18n="guideTag2">Plain-language guide</span><h3 data-i18n="guideTitle2">Insurance words, decoded</h3><p data-i18n="guideSummary2">Premium, sum insured and waiting period.</p></summary><div class="guide-copy" data-i18n="guideCopy2"><b>Premium:</b> the amount paid for a policy. <b>Sum insured:</b> the stated health-cover limit. <b>Waiting period:</b> a period before specified benefits may apply. Check the policy wording for the exact meaning.</div></details>
+        <details class="guide"><summary><span class="guide-tag" data-i18n="guideTag3">Before you buy</span><h3 data-i18n="guideTitle3">A policy comparison checklist</h3><p data-i18n="guideSummary3">Key details to look at before choosing.</p></summary><div class="guide-copy" data-i18n="guideCopy3">Compare who is covered, exclusions, waiting periods, claim requirements, renewal conditions and total cost. Tax treatment depends on current rules and your situation; check with a qualified tax professional.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works">
+    <div class="wrap process">
+      <div class="section-heading"><span class="eyebrow" data-i18n="processEyebrow">A CONVERSATION, NOT A COMMITMENT</span><h2 data-i18n="processTitle">Understand first. Decide when you're ready.</h2><p data-i18n="processCopy">Start with a question and discuss what matters to you.</p></div>
+      <div class="steps">
+        <div class="step"><span class="step-number">01</span><h3 data-i18n="stepTitle1">Tell us what you need</h3><p data-i18n="stepCopy1">Use the enquiry form to share your question and preferred language.</p></div>
+        <div class="step"><span class="step-number">02</span><h3 data-i18n="stepTitle2">Continue in WhatsApp</h3><p data-i18n="stepCopy2">Review the message and choose the contact you want to send it to.</p></div>
+        <div class="step"><span class="step-number">03</span><h3 data-i18n="stepTitle3">Explore your options</h3><p data-i18n="stepCopy3">Ask questions, take your time and decide what works for you.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="culture">
+    <div class="wrap">
+      <div class="culture">
+        <div><span class="eyebrow" data-i18n="cultureEyebrow">ROOTED IN TAMIL NADU</span><h2 data-i18n="cultureTitle">நம் ஊர். நம் மக்கள்.<br>Our home, our people.</h2><p class="culture-copy" data-i18n="cultureCopy">From a kolam at the doorstep to gathering around the Pongal pot, traditions are carried forward by families and communities. We want insurance conversations to feel familiar too: clear, respectful and in the language you choose.</p></div>
+        <div class="traditions">
+          <div class="tradition"><strong data-i18n="tradition1">கோலம் · Kolam</strong><span data-i18n="traditionCopy1">Patterns drawn at the threshold to welcome each day.</span></div>
+          <div class="tradition"><strong data-i18n="tradition2">பொங்கல் · Pongal</strong><span data-i18n="traditionCopy2">A harvest celebration shared with family and neighbours.</span></div>
+          <div class="tradition"><strong data-i18n="tradition3">காஞ்சிபுரம் · Kanchipuram</strong><span data-i18n="traditionCopy3">A renowned silk-weaving tradition from Tamil Nadu.</span></div>
+          <div class="tradition"><strong data-i18n="tradition4">பரதநாட்டியம் · Bharatanatyam</strong><span data-i18n="traditionCopy4">A classical dance tradition with deep roots in the region.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="places">
+    <div class="wrap"><div class="section-heading"><span class="eyebrow" data-i18n="placesEyebrow">MADE FOR LOCAL CONVERSATIONS</span><h2 data-i18n="placesTitle">Across Tamil Nadu.</h2><p data-i18n="placesCopy">These cities and towns reflect the wider Tamil Nadu audience this service hopes to connect with. Listing a place does not indicate a local office or current availability.</p></div><div class="locations"><span class="location" data-city="chennai">Chennai</span><span class="location" data-city="coimbatore">Coimbatore</span><span class="location" data-city="madurai">Madurai</span><span class="location" data-city="tiruchirappalli">Tiruchirappalli</span><span class="location" data-city="salem">Salem</span><span class="location" data-city="tirunelveli">Tirunelveli</span><span class="location" data-city="erode">Erode</span><span class="location" data-city="tiruppur">Tiruppur</span><span class="location" data-city="vellore">Vellore</span><span class="location" data-city="thanjavur">Thanjavur</span><span class="location" data-city="dindigul">Dindigul</span><span class="location" data-city="hosur">Hosur</span><span class="location" data-city="nagercoil">Nagercoil</span><span class="location" data-city="cuddalore">Cuddalore</span><span class="location" data-city="kanchipuram">Kanchipuram</span></div></div>
+  </section>
+
+  <section id="careers">
+    <div class="wrap careers"><div><span class="eyebrow" data-i18n="careersEyebrow">WORK WITH US</span><h2 data-i18n="careersTitle">Interested in a career with Ditto?</h2><p data-i18n="careersCopy">Send an enquiry and tell us what kind of opportunity you're looking for.</p></div><a class="button secondary" href="#contact" data-inquiry="Careers" data-i18n="careersCta">Ask about careers</a></div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-intro"><span class="eyebrow" data-i18n="contactEyebrow">START A CONVERSATION</span><h2 data-i18n="contactTitle">What would you like help with?</h2><p data-i18n="contactCopy">Share a few details and continue in WhatsApp. Your message is prepared for review; this page does not store your details or create a booking.</p></div>
+    <div class="wrap">
+      <form class="contact-form" id="contactForm">
+        <label><span data-i18n="formName">Your name</span><input name="name" autocomplete="name" required></label>
+        <label><span data-i18n="formPhone">Phone number</span><input name="phone" type="tel" autocomplete="tel" required></label>
+        <label class="full"><span data-i18n="formTopic">I'm getting in touch about</span><select name="topic" id="inquiryTopic"><option value="insurance" data-i18n="topicInsurance">Insurance question</option><option value="careers" data-i18n="topicCareers">Careers</option><option value="partnership" data-i18n="topicPartnership">Community or campus partnership</option></select></label>
+        <label class="full"><span data-i18n="formLanguage">Preferred language</span><select name="language" id="preferredLanguage"><option value="ta" data-i18n="languageTamil">Tamil</option><option value="en" data-i18n="languageEnglish">English</option><option value="either" data-i18n="languageEither">Either</option></select></label>
+        <label class="full"><span data-i18n="formMessage">Anything else? (optional)</span><textarea name="message" rows="3"></textarea></label>
+        <button class="button" type="submit" data-i18n="formSubmit">Continue in WhatsApp</button>
+        <p class="form-note" data-i18n="formNote">WhatsApp opens with your message. Choose the intended contact and send it to continue.</p>
+      </form>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap footer-row"><span>Ditto · Tamil Nadu</span><span data-i18n="footerCopy">Insurance guidance in Tamil and English</span><a href="#top" data-i18n="backToTop">Back to top ↑</a></div></footer>
+<script>
+  const translations = {
+    en: {
+      title: "Ditto Tamil Nadu | Insurance, in your language",
+      attributes: { brandHome: "Ditto Tamil Nadu home", mainNav: "Main navigation", chooseLanguage: "Choose language", kolamDescription: "Tamil Nadu inspired kolam pattern" },
+      text: {
+        photoCaption: "Landscape near Bokkapuram, Tamil Nadu · photo by ", photoCredit: "Ronak Naik / Unsplash",
+        skip: "Skip to content", navLearn: "Learn", navProcess: "How it works", navCulture: "Our culture", navPlaces: "Tamil Nadu", navCareers: "Careers", callCta: "Request a call",
+        heroEyebrow: "Tamil Nadu · தமிழ் · English", heroTitle: "Insurance advice that's actually for you.", heroLede: "Talk through your insurance questions in plain Tamil or English. Take the time you need to understand your options before making a decision.", exploreGuides: "Explore free guides", panelTitle: "Let's talk with care.", panelCopy: "Good advice starts with listening. Begin in the language that feels right to you.",
+        learnEyebrow: "A GOOD PLACE TO START", learnTitle: "Insurance, in everyday language.", learnCopy: "Open a guide to explore the basics. General information only; policy terms and benefits vary.", guideTag1: "Life and health", guideTitle1: "Term vs. health insurance", guideSummary1: "What each type is designed to cover.", guideCopy1: "Term cover may provide a benefit to your chosen beneficiaries if you die during the policy term. Health cover helps with eligible medical expenses, subject to policy limits, terms and exclusions. They address different needs.", guideTag2: "Plain-language guide", guideTitle2: "Insurance words, decoded", guideSummary2: "Premium, sum insured and waiting period.", guideCopy2: "Premium: the amount paid for a policy. Sum insured: the stated health-cover limit. Waiting period: a period before specified benefits may apply. Check the policy wording for the exact meaning.", guideTag3: "Before you buy", guideTitle3: "A policy comparison checklist", guideSummary3: "Key details to look at before choosing.", guideCopy3: "Compare who is covered, exclusions, waiting periods, claim requirements, renewal conditions and total cost. Tax treatment depends on current rules and your situation; check with a qualified tax professional.",
+        processEyebrow: "A CONVERSATION, NOT A COMMITMENT", processTitle: "Understand first. Decide when you're ready.", processCopy: "Start with a question and discuss what matters to you.", stepTitle1: "Tell us what you need", stepCopy1: "Use the enquiry form to share your question and preferred language.", stepTitle2: "Continue in WhatsApp", stepCopy2: "Review the message and choose the contact you want to send it to.", stepTitle3: "Explore your options", stepCopy3: "Ask questions, take your time and decide what works for you.",
+        cultureEyebrow: "ROOTED IN TAMIL NADU", cultureTitle: "Our home. Our people.", cultureCopy: "From a kolam at the doorstep to gathering around the Pongal pot, traditions are carried forward by families and communities. We want insurance conversations to feel familiar too: clear, respectful and in the language you choose.", tradition1: "Kolam", traditionCopy1: "Patterns drawn at the threshold to welcome each day.", tradition2: "Pongal", traditionCopy2: "A harvest celebration shared with family and neighbours.", tradition3: "Kanchipuram silk", traditionCopy3: "A renowned silk-weaving tradition from Tamil Nadu.", tradition4: "Bharatanatyam", traditionCopy4: "A classical dance tradition with deep roots in the region.",
+        placesEyebrow: "MADE FOR LOCAL CONVERSATIONS", placesTitle: "Across Tamil Nadu.", placesCopy: "These cities and towns reflect the wider Tamil Nadu audience this service hopes to connect with. Listing a place does not indicate a local office or current availability.",
+        careersEyebrow: "WORK WITH US", careersTitle: "Interested in a career with Ditto?", careersCopy: "Send an enquiry and tell us what kind of opportunity you're looking for.", careersCta: "Ask about careers", contactEyebrow: "START A CONVERSATION", contactTitle: "What would you like help with?", contactCopy: "Share a few details and continue in WhatsApp. Your message is prepared for review; this page does not store your details or create a booking.",
+        formName: "Your name", formPhone: "Phone number", formTopic: "I'm getting in touch about", topicInsurance: "Insurance question", topicCareers: "Careers", topicPartnership: "Community or campus partnership", formLanguage: "Preferred language", languageTamil: "Tamil", languageEnglish: "English", languageEither: "Either", formMessage: "Anything else? (optional)", formSubmit: "Continue in WhatsApp", formNote: "WhatsApp opens with your message. Choose the intended contact and send it to continue.", footerCopy: "Insurance guidance in Tamil and English", backToTop: "Back to top ↑"
+      },
+      cities: { chennai: "Chennai", coimbatore: "Coimbatore", madurai: "Madurai", tiruchirappalli: "Tiruchirappalli", salem: "Salem", tirunelveli: "Tirunelveli", erode: "Erode", tiruppur: "Tiruppur", vellore: "Vellore", thanjavur: "Thanjavur", dindigul: "Dindigul", hosur: "Hosur", nagercoil: "Nagercoil", cuddalore: "Cuddalore", kanchipuram: "Kanchipuram" },
+      whatsapp: { greeting: "Hello, my name is", phone: "Phone", enquiry: "Enquiry", language: "Preferred language", message: "Message", topics: { insurance: "Insurance question", careers: "Careers", partnership: "Community or campus partnership" }, languages: { ta: "Tamil", en: "English", either: "Either" } }
+    },
+    ta: {
+      title: "டிட்டோ தமிழ்நாடு | உங்கள் மொழியில் காப்பீட்டு வழிகாட்டுதல்",
+      attributes: { brandHome: "டிட்டோ தமிழ்நாடு முகப்பு", mainNav: "முதன்மை வழிசெலுத்தல்", chooseLanguage: "மொழியைத் தேர்ந்தெடுக்கவும்", kolamDescription: "தமிழ்நாட்டின் கோல வடிவம்" },
+      text: {
+        photoCaption: "தமிழ்நாடு போக்கபுரம் அருகிலுள்ள இயற்கைக் காட்சி · புகைப்படம்: ", photoCredit: "Ronak Naik / Unsplash",
+        skip: "உள்ளடக்கத்திற்குச் செல்க", navLearn: "கற்றுக்கொள்ளுங்கள்", navProcess: "செயல்முறை", navCulture: "நம் பண்பாடு", navPlaces: "தமிழ்நாடு", navCareers: "வேலைவாய்ப்பு", callCta: "அழைப்பைக் கோருங்கள்",
+        heroEyebrow: "தமிழ்நாடு · தமிழ் · ஆங்கிலம்", heroTitle: "உங்களுக்கான காப்பீட்டு ஆலோசனை.", heroLede: "உங்கள் காப்பீட்டுக் கேள்விகளைத் தெளிவான தமிழில் அல்லது ஆங்கிலத்தில் பேசுங்கள். முடிவெடுப்பதற்கு முன் உங்கள் வாய்ப்புகளைப் புரிந்துகொள்ளத் தேவையான நேரத்தை எடுத்துக்கொள்ளுங்கள்.", exploreGuides: "இலவச வழிகாட்டிகளைப் பார்க்கவும்", panelTitle: "அன்புடன் பேசுவோம்.", panelCopy: "கவனமாகக் கேட்பதில்தான் நல்ல ஆலோசனை தொடங்குகிறது. உங்களுக்கு ஏற்ற மொழியில் பேசத் தொடங்குங்கள்.",
+        learnEyebrow: "தொடங்குவதற்கு ஏற்ற இடம்", learnTitle: "காப்பீட்டை எளிய மொழியில் புரிந்துகொள்ளுங்கள்.", learnCopy: "அடிப்படைகளை அறிய வழிகாட்டியைத் திறக்கவும். இது பொதுவான தகவல் மட்டுமே; பாலிசி விதிமுறைகளும் பலன்களும் மாறுபடும்.", guideTag1: "வாழ்க்கை மற்றும் மருத்துவம்", guideTitle1: "டெர்ம் காப்பீடும் மருத்துவக் காப்பீடும்", guideSummary1: "ஒவ்வொரு வகையும் எதற்காகப் பயன்படுகிறது.", guideCopy1: "பாலிசி காலத்தில் காப்பீடு பெற்றவர் இறந்தால், டெர்ம் காப்பீடு நியமிக்கப்பட்ட பயனாளிகளுக்கு தொகை வழங்கக்கூடும். மருத்துவக் காப்பீடு, பாலிசியின் வரம்புகள், விதிமுறைகள் மற்றும் விலக்குகளுக்கு உட்பட்டு, தகுதியான மருத்துவச் செலவுகளுக்கு உதவும். இவை வெவ்வேறு தேவைகளைப் பூர்த்தி செய்கின்றன.", guideTag2: "எளிய விளக்கம்", guideTitle2: "காப்பீட்டுச் சொற்களைப் புரிந்துகொள்வோம்", guideSummary2: "பிரீமியம், காப்பீட்டுத் தொகை, காத்திருப்புக் காலம்.", guideCopy2: "பிரீமியம்: பாலிசிக்காகச் செலுத்தும் தொகை. காப்பீட்டுத் தொகை: மருத்துவக் காப்பீட்டின் குறிப்பிடப்பட்ட வரம்பு. காத்திருப்புக் காலம்: சில பலன்கள் கிடைக்கும் முன் காத்திருக்க வேண்டிய காலம். சரியான விளக்கத்திற்கு பாலிசி ஆவணத்தைப் பார்க்கவும்.", guideTag3: "வாங்குவதற்கு முன்", guideTitle3: "பாலிசியை ஒப்பிடுவதற்கான பட்டியல்", guideSummary3: "தேர்வு செய்வதற்கு முன் கவனிக்க வேண்டியவை.", guideCopy3: "யாருக்குக் காப்பீடு வழங்கப்படுகிறது, விலக்குகள், காத்திருப்புக் காலம், கோரிக்கை நடைமுறை, புதுப்பிப்பு நிபந்தனைகள், மொத்தச் செலவு ஆகியவற்றை ஒப்பிடுங்கள். வரிச் சலுகைகள் தற்போதைய விதிகளையும் உங்கள் சூழலையும் பொறுத்தவை; தகுதியான வரி நிபுணரிடம் சரிபார்க்கவும்.",
+        processEyebrow: "உரையாடல் மட்டுமே; கட்டாயமில்லை", processTitle: "முதலில் புரிந்துகொள்ளுங்கள். தயாரானபோது முடிவெடுங்கள்.", processCopy: "உங்கள் கேள்வியுடன் தொடங்கி, உங்களுக்கு முக்கியமானவற்றைப் பேசுங்கள்.", stepTitle1: "உங்கள் தேவையைப் பகிருங்கள்", stepCopy1: "உங்கள் கேள்வியையும் விரும்பும் மொழியையும் படிவத்தில் தெரிவியுங்கள்.", stepTitle2: "WhatsApp-இல் தொடருங்கள்", stepCopy2: "செய்தியைச் சரிபார்த்து, அதை அனுப்ப விரும்பும் தொடர்பைத் தேர்ந்தெடுங்கள்.", stepTitle3: "வாய்ப்புகளை அறிந்துகொள்ளுங்கள்", stepCopy3: "கேள்விகளைக் கேளுங்கள், நேரம் எடுத்துக்கொள்ளுங்கள், உங்களுக்குப் பொருத்தமானதைத் தீர்மானியுங்கள்.",
+        cultureEyebrow: "தமிழ்நாட்டின் வேர்கள்", cultureTitle: "நம் ஊர். நம் மக்கள்.", cultureCopy: "வாசலில் இடப்படும் கோலத்திலிருந்து பொங்கல் பானையைச் சுற்றிக் கூடுவது வரை, குடும்பங்களும் சமூகங்களும் நம் மரபுகளைத் தொடர்ந்து வளர்க்கின்றன. காப்பீட்டைப் பற்றிய உரையாடலும் அப்படியே நெருக்கமாக இருக்கட்டும்: தெளிவாகவும் மரியாதையுடனும் நீங்கள் தேர்ந்தெடுக்கும் மொழியிலும்.", tradition1: "கோலம்", traditionCopy1: "ஒவ்வொரு நாளையும் வரவேற்க வாசலில் இடப்படும் கோல வடிவங்கள்.", tradition2: "பொங்கல்", traditionCopy2: "குடும்பத்தினரும் அண்டை வீட்டாரும் இணைந்து கொண்டாடும் அறுவடைத் திருவிழா.", tradition3: "காஞ்சிபுரம் பட்டு", traditionCopy3: "தமிழ்நாட்டின் புகழ்பெற்ற பட்டு நெசவு மரபு.", tradition4: "பரதநாட்டியம்", traditionCopy4: "இப்பகுதியின் ஆழமான வேர்களைக் கொண்ட செவ்வியல் நடன மரபு.",
+        placesEyebrow: "உள்ளூர் உரையாடல்களுக்காக", placesTitle: "தமிழ்நாடு முழுவதும்.", placesCopy: "இந்த நகரங்களும் ஊர்களும் நாம் இணைந்து பேச விரும்பும் பரந்த தமிழ்நாட்டு மக்களைக் காட்டுகின்றன. பட்டியலில் ஓர் இடம் இருப்பது அங்கு அலுவலகம் அல்லது தற்போது சேவை உள்ளது என்பதைக் குறிக்காது.",
+        careersEyebrow: "எங்களுடன் பணியாற்றுங்கள்", careersTitle: "டிட்டோவில் பணியாற்ற விருப்பமா?", careersCopy: "நீங்கள் எதிர்பார்க்கும் வாய்ப்பைப் பற்றி தெரிவித்து விசாரிக்கவும்.", careersCta: "வேலைவாய்ப்பு பற்றி கேளுங்கள்", contactEyebrow: "உரையாடலைத் தொடங்குங்கள்", contactTitle: "எதில் உதவி தேவை?", contactCopy: "சில விவரங்களைப் பகிர்ந்து WhatsApp-இல் தொடருங்கள். உங்கள் செய்தியைப் பார்த்து அனுப்பலாம்; இந்தப் பக்கம் விவரங்களைச் சேமிக்காது, சந்திப்பையும் பதிவு செய்யாது.",
+        formName: "உங்கள் பெயர்", formPhone: "தொலைபேசி எண்", formTopic: "தொடர்புகொள்வதற்கான காரணம்", topicInsurance: "காப்பீட்டுக் கேள்வி", topicCareers: "வேலைவாய்ப்பு", topicPartnership: "சமூகம் அல்லது கல்லூரி இணைப்பு", formLanguage: "விரும்பும் மொழி", languageTamil: "தமிழ்", languageEnglish: "ஆங்கிலம்", languageEither: "இரண்டும் சரி", formMessage: "கூடுதல் தகவல்? (விருப்பத்தேர்வு)", formSubmit: "WhatsApp-இல் தொடருங்கள்", formNote: "உங்கள் செய்தியுடன் WhatsApp திறக்கும். தொடர்பைத் தேர்ந்தெடுத்து செய்தியை அனுப்புங்கள்.", footerCopy: "தமிழ் மற்றும் ஆங்கிலத்தில் காப்பீட்டு வழிகாட்டுதல்", backToTop: "மேலே செல்க ↑"
+      },
+      cities: { chennai: "சென்னை", coimbatore: "கோயம்புத்தூர்", madurai: "மதுரை", tiruchirappalli: "திருச்சிராப்பள்ளி", salem: "சேலம்", tirunelveli: "திருநெல்வேலி", erode: "ஈரோடு", tiruppur: "திருப்பூர்", vellore: "வேலூர்", thanjavur: "தஞ்சாவூர்", dindigul: "திண்டுக்கல்", hosur: "ஓசூர்", nagercoil: "நாகர்கோவில்", cuddalore: "கடலூர்", kanchipuram: "காஞ்சிபுரம்" },
+      whatsapp: { greeting: "வணக்கம், என் பெயர்", phone: "தொலைபேசி எண்", enquiry: "விசாரிப்பு", language: "விரும்பும் மொழி", message: "செய்தி", topics: { insurance: "காப்பீட்டுக் கேள்வி", careers: "வேலைவாய்ப்பு", partnership: "சமூகம் அல்லது கல்லூரி இணைப்பு" }, languages: { ta: "தமிழ்", en: "ஆங்கிலம்", either: "இரண்டும் சரி" } }
+    }
+  };
+
+  function setLanguage(language) {
+    const selected = translations[language];
+    document.documentElement.lang = language;
+    document.title = selected.title;
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+      element.textContent = selected.text[element.dataset.i18n];
+    });
+    document.querySelectorAll("[data-i18n-aria]").forEach(element => {
+      element.setAttribute("aria-label", selected.attributes[element.dataset.i18nAria]);
+    });
+    document.querySelectorAll("[data-city]").forEach(element => {
+      element.textContent = selected.cities[element.dataset.city];
+    });
+    document.querySelectorAll("[data-lang]").forEach(button => {
+      button.setAttribute("aria-pressed", String(button.dataset.lang === language));
+    });
+  }
+
+  document.querySelectorAll("[data-lang]").forEach(button => {
+    button.addEventListener("click", () => setLanguage(button.dataset.lang));
+  });
+
+  document.querySelectorAll('[data-inquiry="Careers"]').forEach(link => {
+    link.addEventListener("click", () => {
+      document.getElementById("inquiryTopic").value = "careers";
+    });
+  });
+
+  document.getElementById("contactForm").addEventListener("submit", event => {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const language = document.documentElement.lang === "ta" ? "ta" : "en";
+    const labels = translations[language].whatsapp;
+    const message = [
+      `${labels.greeting} ${form.get("name")}.`,
+      `${labels.phone}: ${form.get("phone")}`,
+      `${labels.enquiry}: ${labels.topics[form.get("topic")]}`,
+      `${labels.language}: ${labels.languages[form.get("language")]}`,
+      form.get("message") ? `${labels.message}: ${form.get("message")}` : ""
+    ].filter(Boolean).join("\n");
+    window.location.href = `https://wa.me/?text=${encodeURIComponent(message)}`;
+  });
+
+  setLanguage("en");
+</script>
+</body>
+</html>
